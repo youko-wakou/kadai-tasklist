@@ -2,4 +2,18 @@
   <%= f.label :content, 'タスク' %>
   <%= f.text_field :content %>
   
+    <div id="error_explanation">
+      <ul>
+        <% message.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.label :content, 'タスク'>
+  <%= f.field :content %>
+  
+  
   <%= f.submit '投稿' %>
+<% end %>
