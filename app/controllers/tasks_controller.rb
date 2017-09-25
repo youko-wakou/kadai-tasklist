@@ -1,4 +1,4 @@
-class TaskController < ApplicationController
+class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   def index
     @tasks = Task.all
@@ -15,6 +15,7 @@ class TaskController < ApplicationController
   end
   
   def create
+    # binding.pry
     @task = Task.new(task_params)
     
     if @task.save
@@ -27,6 +28,7 @@ class TaskController < ApplicationController
   end
   
   def edit
+    # binding.pry
     set_task
   end
   
@@ -47,7 +49,7 @@ class TaskController < ApplicationController
     @task.destroy
     
     flash[:success] = 'Task は正常に削除されました'
-    redirect_to task_index_url
+    redirect_to tasks_url
     
   end
   
